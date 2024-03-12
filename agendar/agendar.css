@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.agenda-geral{
+    margin: 0 auto;
+    background-color: rgb(233,233,233);
+    border-radius: 5%;
+    width: 500px;
+    height: 450px;
+    margin-top: 10%;
+}
+
+.form-agendar{
+    margin: 10px;
+}
+
+.form-agendar h2{
+    margin-bottom: 15px;
+}
