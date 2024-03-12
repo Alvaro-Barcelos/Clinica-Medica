@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 800px;
+    background-color: #07668C;
+}
+.column-one{
+    height: 500px;
+    background-color: aquamarine;
+}
+.column-two{
+    height: 500px;
+    background-color: bisque;
+}
