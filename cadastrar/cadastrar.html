@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=, initial-scale=1.0">
@@ -15,15 +15,15 @@
             <h2>Cadastrar cliente</h2>
             <form class="questions">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Nome do(a) Cliente">
+                  <input type="text" class="form-control" placeholder="Nome do(a) Cliente" autocomplete="off">
                 </div>
 
-                <div class="mb-3">
-                    <input type="" class="form-control" placeholder="CPF">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
                   </div>
 
                   <div class="mb-3">
-                    <input type="datetime" class="form-control" placeholder="Data de nascimento">
+                    <input type="" class="form-control" id="date" maxlength="10" placeholder="Data de nascimento" autocomplete="off">
                   </div>
 
                   <div class="sexo">
@@ -38,16 +38,27 @@
                   </div>
 
                   <div class="mb-3">
-                    <input type="tel" class="form-control" placeholder="Telefone">
+                    <input type="tel" class="form-control" id="tel" placeholder="Telefone" autocomplete="off" maxlength="16" >
                   </div>
 
                   <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="E-mail do(a) Cliente">
+                    <input type="email" class="form-control" placeholder="E-mail do(a) Cliente" autocomplete="off">
                   </div>
 
                 <button type="submit" class="btn btn-primary" id="botao">Cadastrar</button>
               </form>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+      <script>
+          $('#date').mask('00/00/0000');
+          $('#cpf').mask('000.000.000-00', {reverse: true});
+          $('#tel').mask('(00) 0000-0000');
+
+
+      </script>
     </body>
 
 </html>
