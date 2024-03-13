@@ -42,36 +42,36 @@
         </section>
         <div class="cadastrar">
             <h2>Cadastrar cliente</h2>
-            <form class="questions">
+            <form class="questions" action="cadastro.php">
                 <div class="mb-3">
-                  <input type="text" class="form-control " placeholder="Nome do(a) Cliente" autocomplete="off">
+                  <input name="nome" type="text" class="form-control " placeholder="Nome do(a) Cliente" autocomplete="off">
                 </div>
 
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
+                    <input name="cpf" type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
                   </div>
 
                   <div class="mb-3">
-                    <input type="" class="form-control" id="date" maxlength="10" placeholder="Data de nascimento" autocomplete="off">
+                    <input name="data_nascimento" type="" class="form-control" id="date" maxlength="10" placeholder="Data de nascimento" autocomplete="off">
                   </div>
 
                   <div class="sexo">
                     <div class="form-check form-check-inline" >
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input name="sexo" class="form-check-input" type="radio" id="inlineRadio1" value="m">
                         <label class="form-check-label" for="inlineRadio1">Masculino</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input name="sexo" class="form-check-input" type="radio" id="inlineRadio2" value="f">
                         <label class="form-check-label" for="inlineRadio2">Feminino</label>
                       </div>
                   </div>
 
                   <div class="mb-3">
-                    <input type="tel" class="form-control" id="tel" placeholder="Telefone" autocomplete="off" maxlength="16" >
+                    <input name="email" type="email" class="form-control" placeholder="E-mail do(a) Cliente" autocomplete="off">
                   </div>
 
                   <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="E-mail do(a) Cliente" autocomplete="off">
+                    <input name="telefone"type="tel" class="form-control" id="tel" placeholder="Telefone" autocomplete="off" maxlength="16" >
                   </div>
 
                 <button type="submit" class="btn btn-primary" id="botao">Cadastrar</button>
