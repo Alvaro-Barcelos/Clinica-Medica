@@ -9,14 +9,14 @@
     
     <?php
     
-        include_once("conexao.php");
+        include_once('../conexao.php');
 
         $data = $_POST['dateConsulta'];
         $horario = $_POST['horaConsulta'];
-        $tipo = $_POST['tipoConsulta']
+        $tipo = $_POST['tipoConsulta'];
 
 
-        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horário, Tipo_consulta) VALUES ('$dateConsulta', '$horaConsulta', '$tipoConsulta')")
+        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta) VALUES ('$data', '$horario', '$tipo')")
 
         or die (mysqli_error());
 
