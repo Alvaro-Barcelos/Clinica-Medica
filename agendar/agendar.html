@@ -13,21 +13,21 @@
 <body>
     
     <div class="agenda-geral">
-        <form action="agendar.php" class="form-agendar">
+        <form action="agendar.php" method="post" class="form-agendar">
             <h2>Agendar Consulta</h2>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"></label>
-              <input type="datetime" class="form-control" id="dateConsulta" aria-describedby="emailHelp" placeholder="Data da Consulta">
+              <input type="datetime" class="form-control" id="dateConsulta" aria-describedby="emailHelp" placeholder="Data da Consulta" name="dateConsulta">
             </div>
     
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"></label>
-                <input type="datetime" class="form-control" id="horaConsulta" aria-describedby="emailHelp" placeholder="Horário da Consulta">
+                <input type="datetime" class="form-control" id="horaConsulta" aria-describedby="emailHelp" placeholder="Horário da Consulta" name="horaConsulta">
             </div>
     
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"></label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tipo da Consulta">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tipo da Consulta" name="tipoConsulta">
             </div>
 
             <button type="submit" id="botao" class="btn btn-primary">Cadastrar</button>
