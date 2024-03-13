@@ -14,11 +14,12 @@
         $data = $_POST['dateConsulta'];
         $horario = $_POST['horaConsulta'];
         $tipo = $_POST['tipoConsulta'];
+        $codigo = $_POST['cod_cliente'];
 
 
-        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta) VALUES ('$data', '$horario', '$tipo')")
+        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta, cod_cliente) VALUES ($data', '$horario', '$tipo', '$codigo')") or die (mysqli_error());
 
-        or die (mysqli_error());
+        
 
         echo "Consulta marcada com sucesso!";
     

@@ -11,7 +11,7 @@
 
 	// REVISADO - OK
 	
-	include_once("conexao.php");
+	include_once("../conexao.php");
 
 		$nome = $_POST['nome'];
 		$cpf = $_POST['cpf'];
@@ -21,9 +21,9 @@
 		$telefone = $_POST['telefone'];  
         
 		$insere = mysqli_query ($conexao, “INSERT INTO Cliente (Nome_cliente, CPF, Telefone, Nascimento, Sexo, Email, Telefone)
-        VALUES ('$nome', '$cpf', '$data_nascimento', '$sexo', '$email', '$telefone')”);
+        VALUES ('$nome', '$cpf', '$data_nascimento', '$sexo', '$email', '$telefone')”) or die (mysqli_error());
 
-		or die (mysqli_error());
+		
 		echo “Cliente inserido com sucesso!”; 
 		?>
 
