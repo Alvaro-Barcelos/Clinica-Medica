@@ -6,17 +6,32 @@
 
 .agenda-geral{
     margin: 0 auto;
-    background-color: rgb(233,233,233);
+    background-color: #04BF55;
     border-radius: 5%;
     width: 500px;
-    height: 450px;
+    height: 400px;
     margin-top: 10%;
+    box-shadow: 3px 3px 3px rgba(99, 99, 99, 0.2);
 }
 
 .form-agendar{
     margin: 10px;
+    text-align: center;
+    padding-top: 25px;
 }
 
 .form-agendar h2{
     margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.form-agendar button:hover{
+    transform: translateY(-3px);
+    transition: 0.5s;
+}
+
+#botao {
+    background-color: #07668C;
+    border: 1px solid #07668C;
 }
