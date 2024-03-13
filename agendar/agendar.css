@@ -55,36 +55,49 @@ section div {
     background-color: #07668C;
 }
 
-.agenda-geral{
-    margin: 0 auto;
-    background-color: #04BF55;
-    border-radius: 5%;
-    width: 500px;
-    height: 400px;
-    margin-top: 10%;
-    box-shadow: 3px 3px 3px rgba(99, 99, 99, 0.2);
-}
-
-.form-agendar{
-    margin: 10px;
-    text-align: center;
-    padding-top: 25px;
-}
-
-.form-agendar h2{
-    margin-bottom: 15px;
-    text-align: center;
-    padding-top: 10px;
+section div {
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07668C;
 }
 
-.form-agendar button:hover{
-    transform: translateY(-3px);
-    transition: 0.5s;
+/* fim menu */
+
+
+.agendar{
+    background-color: #04BF55;
+    margin:0 auto;
+    padding-top: 20px;
+    width: 500px;
+    height: 380px; 
+    margin-top: 100px;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px rgb(185, 185, 185);
+    text-align: center;
+}
+
+
+.agendar h2 {
+    color: white;
+    margin-left: 15px;
+    text-align: center;
+}
+
+
+.questions{
+    margin: 10px;
 }
 
 #botao {
+    margin-top: 20px;
     background-color: #07668C;
     border: 1px solid #07668C;
     box-shadow: 1px 1px 1px black;
 }
+
+.agendar button:hover{
+    transform: translateY(-3px);
+    transition: 0.5s;
+} 

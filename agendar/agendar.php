@@ -16,7 +16,8 @@
         $tipo = $_POST['tipoConsulta'];
 
 
-        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta) VALUES ('$data', '$horario', '$tipo')")
+        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta) 
+        VALUES ('$data', '$horario', '$tipo')")
 
         or die (mysqli_error());
 
