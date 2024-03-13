@@ -24,6 +24,7 @@
     margin-bottom: 15px;
     text-align: center;
     padding-top: 10px;
+    color: white;
 }
 
 .form-agendar button:hover{
@@ -34,4 +35,5 @@
 #botao {
     background-color: #07668C;
     border: 1px solid #07668C;
+    box-shadow: 1px 1px 1px black;
 }
