@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=, initial-scale=1.0">
         <title>Document</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="consulta.css">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -43,27 +43,29 @@
 
 
             <?php
+                include_once('../conexao.php');
 
-                include_once('conexao.php');
+                if(isset($_POST['date'])) {
+                    $data = $_POST['date'];
 
+                    $consulta = mysqli_query($conexao, "SELECT Consulta.Cod_consulta, Consulta.Data_consulta, Consulta.Horario, Consulta.Tipo_consulta, cliente.Nome_cliente FROM Consulta INNER JOIN cliente 
+                                ON consulta.cod_cliente = cliente.cod_cliente
+                                WHERE Data_consulta = '$data'");
 
-                $data = _POST['date'];
-
-                $consulta = mysqli_query($conexao, "SELECT Consulta.Cod_consulta, Consulta.Data_consulta, Consulta.Horário, Consulta.Tipo_consulta, cliente.Nome_cliente FROM Consulta INNER JOIN cliente 
-                ON consulta.cod_cliente = cliente.cod_cliente
-                WHERE Data_consulta = '$data'");
-
-                while ($linha = mysqli_fetch_array($consulta)) {
-
-                    echo " <div class='cadastrar'>";
-                    echo "<p>Codigo: " . $linha['Cod_consulta'] . "</p>";
-                    echo "<p>Data da consulta: "  . $linha['Data_consulta'] . "</p>";
-                    echo "<p>Horário: " . $linha['Horário'] . "</p>";
-                    echo "<p>Tipo: "  . $linha['Tipo_consulta'] . "</p>";
-                    echo "<p>Nome do cliente: "  . $linha['telefone'] . "</p>";
-                    echo "</div>";
+                    if(mysqli_num_rows($consulta) > 0) {
+                        while ($linha = mysqli_fetch_array($consulta)) {
+                            echo " <div class='cadastrar'>";
+                            echo "<p>Codigo: " . $linha['Cod_consulta'] . "</p>";
+                            echo "<p>Data da consulta: "  . $linha['Data_consulta'] . "</p>";
+                            echo "<p>Horário: " . $linha['Horario'] . "</p>";
+                            echo "<p>Tipo: "  . $linha['Tipo_consulta'] . "</p>";
+                            echo "<p>Nome do cliente: "  . $linha['Nome_cliente'] . "</p>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>Nenhum resultado encontrado para a data especificada.</p>";
+                    }
                 }
-
             ?>
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
