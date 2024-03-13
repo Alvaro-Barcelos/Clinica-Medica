@@ -19,9 +19,9 @@
 		$sexo = $_POST['sexo'];
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];  
+        
 		$insere = mysqli_query ($conexao, “INSERT INTO Cliente (Nome_cliente, CPF, Telefone, Nascimento, Sexo, Email, Telefone)
-
-		VALUES ('$nome', '$cpf', '$data_nascimento', '$sexo', '$email', '$telefone')”)
+        VALUES ('$nome', '$cpf', '$data_nascimento', '$sexo', '$email', '$telefone')”);
 
 		or die (mysqli_error());
 		echo “Cliente inserido com sucesso!”; 
