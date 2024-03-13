@@ -38,7 +38,10 @@ nav ul li{
     list-style: none;
     padding: 5px 35px 5px 35px;
 }
-
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
 nav ul li:hover{
     background-color: #04BF55;
     border-radius: 10px;
