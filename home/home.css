@@ -64,6 +64,7 @@ section div {
     margin-right: 30px;
     height: 250px;
     color: white;
+    box-shadow: 5px 5px 5px rgb(185, 185, 185);
 }
 
 .card-body{
