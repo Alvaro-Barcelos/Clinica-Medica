@@ -56,11 +56,21 @@ section div {
     background-color: #07668C;
 }
 
+.motivacional{
+    width: 100%;
+}
+
+.motivacional img {
+    width: 100%;
+    height: 700px;
+}
+
 
 .conteudo-cards{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 100px;
 }
 
 .card{
@@ -84,9 +94,26 @@ section div {
     padding: 10px;
 }
 
+.card-body a:hover{
+    background-color: #065675a7;
+    color: rgba(255, 255, 255, 0.697);    
+}
+
 .mapa{
-    
-    width: 800px; 
-    height: 450px;
+    background-color: #07668C;
+    width: 100%; 
+    height: 600px;
     margin: 0 auto;
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+    padding-top: 1%;
+}
+
+
+.mapa iframe{
+    margin-top: 2%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px rgb(66, 66, 66);
+
 }
