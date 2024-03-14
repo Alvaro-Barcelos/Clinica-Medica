@@ -42,11 +42,12 @@ nav ul li a{
     color: white;
     text-decoration: none;
 }
-nav ul li a{
-    color: white;
-    text-decoration: none;
-}
 
+nav ul li a:hover{
+    color: rgb(107, 107, 107);    
+    transform: translateY(-1px);
+    transition: 0.5s;
+}
 section div {
     color: white;
     display: flex;
