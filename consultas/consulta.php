@@ -48,9 +48,9 @@
                 if(isset($_POST['date'])) {
                     $data = $_POST['date'];
 
-                    $consulta = mysqli_query($conexao, "SELECT consulta.Cod_consulta, consulta.Data_consulta, consulta.Horario, consulta.Tipo_consulta, cliente.Nome_cliente 
+                    $consulta = mysqli_query($conexao, "SELECT consulta.CPF, consulta.Data_consulta, consulta.Horario, consulta.Tipo_consulta, cliente.Nome_cliente 
                     FROM Consulta INNER JOIN cliente 
-                    ON consulta.cod_cliente = cliente.cod_cliente
+                    ON consulta.CPF = cliente.CPF
                     WHERE Data_consulta = '$data'");
 
                     if(mysqli_num_rows($consulta) > 0) {
