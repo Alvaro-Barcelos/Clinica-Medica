@@ -41,16 +41,17 @@
         <div class="cadastrar">
             <h2>Cadastrar cliente</h2>
             <form class="questions" action="cadastro.php" method="post">
-                <div class="mb-3">
-                  <input name="nome" type="text" class="form-control " placeholder="Nome do(a) Cliente" autocomplete="off">
-                </div>
-
+                
                   <div class="mb-3">
                     <input name="cpf" type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
                   </div>
 
                   <div class="mb-3">
-                    <input name="data_nascimento" type="" class="form-control" id="date" maxlength="10" placeholder="Data de nascimento" autocomplete="off">
+                    <input name="nome" type="text" class="form-control " placeholder="Nome do(a) Cliente" autocomplete="off">
+                  </div>
+
+                  <div class="mb-3">
+                    <input name="data_nascimento" type="date" class="form-control" id="date" maxlength="10" placeholder="Data de nascimento" autocomplete="off">
                   </div>
 
                   <div class="sexo">
@@ -80,7 +81,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 
       <script>
-          $('#date').mask('00/00/0000');
           $('#cpf').mask('000.000.000-00', {reverse: true});
           $('#tel').mask('(00) 0000-0000');
       </script>

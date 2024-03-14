@@ -54,9 +54,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"></label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tipo da Consulta" name="cod_cliente">
-            </div>
+                <input name="cpf" type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
+              </div>
 
             <button type="submit" id="botao" class="btn btn-primary">Cadastrar</button>
         </form>
@@ -67,6 +66,7 @@
 
   <script>
       $('#horaConsulta').mask('00:00');
+      $('#cpf').mask('000.000.000-00', {reverse: true});
   </script>
 
 </body>

@@ -14,10 +14,10 @@
         $data = $_POST['dateConsulta'];
         $horario = $_POST['horaConsulta'];
         $tipo = $_POST['tipoConsulta'];
-        $codigo = $_POST['cod_cliente'];
+        $cpf = $_POST['cpf'];
 
 
-        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta, cod_cliente) VALUES ($data', '$horario', '$tipo', '$codigo')") or die (mysqli_error());
+        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta, cpf) VALUES ('$data', '$horario', '$tipo', '$cpf')") or die (mysqli_error());
 
         
 
