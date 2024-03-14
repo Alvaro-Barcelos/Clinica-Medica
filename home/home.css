@@ -42,9 +42,9 @@ nav ul li a{
     color: white;
     text-decoration: none;
 }
-nav ul li:hover{
-    background-color: #04BF55;
-    border-radius: 10px;
+nav ul li a{
+    color: white;
+    text-decoration: none;
 }
 
 section div {
