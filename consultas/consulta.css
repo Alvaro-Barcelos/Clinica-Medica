@@ -62,7 +62,7 @@ section div {
 }
 
 .cadastrar{
-    background-color: rgb(233, 233, 233);
+    background-color: #2b99c5;
     margin:0 auto;
     padding-top: 20px;
     width: 500px;
@@ -97,4 +97,20 @@ section div {
 .cadastrar button:hover{
     transform: translateY(-3px);
     transition: 0.5s;
+}
+
+.cadastrar table{
+    border: 2px solid #07668C;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.cadastrar table th{
+    padding: 10px;
+    background-color: rgb(156, 165, 165);
+}
+
+.cadastrar table td{
+    padding: 10px;
+    background-color: rgb(250, 252, 250);
 }

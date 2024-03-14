@@ -32,16 +32,18 @@
                 
                 <nav>
                     <ul>
-                        <li>Home</li>
-                        <li>Sobre nos</li>
-                        <li>Agendar</li>
-                        <li>Consultar</li>
+                        <li><a href="../home/home.html">Home</a></li>
+                        <li><a href="../home/home.html">Sobre nos</a></li>
+                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
+                        <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    
                 </nav>
             </div>
         </section>
 
-
+        <div class='cadastrar'>
+            <table>
             <?php
                 include_once('../conexao.php');
 
@@ -55,19 +57,31 @@
 
                     if(mysqli_num_rows($consulta) > 0) {
                         while ($linha = mysqli_fetch_array($consulta)) {
-                            echo " <div class='cadastrar'>";
-                            echo "<p>Codigo: " . $linha['Cod_consulta'] . "</p>";
-                            echo "<p>Data da consulta: "  . $linha['Data_consulta'] . "</p>";
-                            echo "<p>Horário: " . $linha['Horario'] . "</p>";
-                            echo "<p>Tipo: "  . $linha['Tipo_consulta'] . "</p>";
-                            echo "<p>Nome do cliente: "  . $linha['Nome_cliente'] . "</p>";
-                            echo "</div>";
+       
+                                    echo "<tr>";
+                                        echo "<th>Data da consulta" . " </th>";
+                                        echo "<th>Horário " .   " </th>";
+                                        echo "<th>Tipo "  .   " </th>";
+                                        echo "<th>Nome do cliente "  .   " </th>";
+                                    echo "</tr>";
+
+                                    echo "<tr>";
+                                        echo "<td> " . $linha['Data_consulta'] . "</td>";
+                                        echo "<td> " . $linha['Horario'] . "</td>";
+                                        echo "<td> " . $linha['Tipo_consulta'] . "</td>";
+                                        echo "<td> " . $linha['Nome_cliente'] . "</td>";
+                                    echo "</tr>";
+                                
+                            
+
                         }
                     } else {
                         echo "<p>Nenhum resultado encontrado para a data especificada.</p>";
                     }
                 }
             ?>
+            </table>
+            </div>
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
