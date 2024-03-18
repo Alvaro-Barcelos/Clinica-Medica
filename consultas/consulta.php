@@ -76,7 +76,10 @@
 
                         }
                     } else {
-                        echo "<p>Nenhum resultado encontrado para a data especificada.</p>";
+                        echo "<div class='aviso'>";
+                        echo "<p>Nenhum resultado encontrado para a data especificada.</p>"; 
+                        echo "</div>""
+
                     }
                 }
             ?>
