@@ -122,3 +122,28 @@ section div {
     box-shadow: 5px 5px 5px rgb(185, 185, 185);
     text-align: center;
 }
+
+.dropdown button{
+    color: white;
+    background-color: #07668C;
+    border-color: #07668C;
+}
+
+.dropdown button{
+    color: white;
+    background-color: #07668C;
+    border-color: transparent;
+}
+
+.dropdown button:hover{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown button:active{
+    background-color: #07668C;
+}
+
+.dropdown button:hover{
+    background-color: #07668C;
+}

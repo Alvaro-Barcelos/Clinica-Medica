@@ -31,11 +31,19 @@
                 
                 
                 <nav>
-                    <ul>
+                <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
                         <li><a href="../agendar/agendar.html">Agendar</a></li>
-                        <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
+                        <li><div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Cliente
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="../cadastrar/cadastrar.html">Cadastrar Cliente</a>
+                              <a class="dropdown-item" href="../listarClientes/consultar_cliente.php">Alterar Dados</a>
+                            </div>
+                          </div></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    
                 </nav>
