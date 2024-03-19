@@ -83,7 +83,7 @@
                      
 
                             echo"<label> telefone </label>";
-                            echo"<input name='telefone' type='tel' class='form-control' id='sexo'  autocomplete='off' value=" . $linha['telefone'] .">";
+                            echo"<input name='telefone' type='tel' class='form-control' id='sexo' maxlength='16' autocomplete='off' value=" . $linha['telefone'] .">";
         
                        
                     }
