@@ -64,30 +64,25 @@
 
 
 					while ($linha = mysqli_fetch_array($consulta)) {
-    
-                            echo"<label> CPF </label>";
-                            echo"<input name='cpf' type='text' class='form-control' id='cpf' maxlength='14' autocomplete='off' value=" . $linha['cpf'] .">";
+                        echo "<label> CPF </label>";
+                        echo "<input name='cpf' type='text' class='form-control' id='cpf' maxlength='14' autocomplete='off' value='" . htmlspecialchars($linha['cpf']) . "'>";
 
-                            echo"<label> Nome </label>";
-                            echo"<input name='cliente' type='text' class='form-control' id='cliente'  autocomplete='off' value=" . $linha['cliente'] .">";
+                        echo "<label> Nome </label>";
+                        echo "<input name='cliente' type='text' class='form-control' id='cliente'  autocomplete='off' value='" . htmlspecialchars($linha['cliente']) . "'>";
 
-                            echo"<label> Nascimento </label>";
-                            echo"<input name='data_nascimento' type='date' class='form-control' id='date'  autocomplete='off' value=" . $linha['nascimento'] .">";
+                        echo "<label> Nascimento </label>";
+                        echo "<input name='data_nascimento' type='date' class='form-control' id='date'  autocomplete='off' value='" . htmlspecialchars($linha['nascimento']) . "'>";
 
-                            echo"<label> Sexo </label>";
-                            echo"<input name='sexo' type='text' class='form-control' id='sexo' maxlength='1' autocomplete='off' value=" . $linha['sexo'] .">";
+                        echo "<label> Sexo </label>";
+                        echo "<input name='sexo' type='text' class='form-control' id='sexo' maxlength='1' autocomplete='off' value='" . htmlspecialchars($linha['sexo']) . "'>";
 
+                        echo "<label> Email </label>";
+                        echo "<input name='email' type='email' class='form-control' id='sexo'  autocomplete='off' value='" . htmlspecialchars($linha['email']) . "'>";
 
-                            echo"<label> Email </label>";
-                            echo"<input name='email' type='email' class='form-control' id='sexo'  autocomplete='off' value=" . $linha['email'] .">";
-                     
-
-                            echo"<label> telefone </label>";
-                            echo"<input name='telefone' type='tel' class='form-control' id='sexo' maxlength='16' autocomplete='off' value=" . $linha['telefone'] .">";
-        
-                       
+                        echo "<label> telefone </label>";
+                        echo "<input name='telefone' type='tel' class='form-control' id='sexo' maxlength='16' autocomplete='off' value='" . htmlspecialchars($linha['telefone']) . "'>";
                     }
-					echo"<input type='submit' value='Enviar'>";	 
+                    echo "<input type='submit' value='Enviar'>";
 				?>
 				</td>
 			</tr>

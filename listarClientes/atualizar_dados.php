@@ -85,7 +85,7 @@
                             echo "Todos os campos são obrigatórios.";
                         }
                     }
-                ?>
+                    ?>
 				</td>
 			</tr>
 		</table>
