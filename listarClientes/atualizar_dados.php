@@ -44,7 +44,7 @@
         </section>
 	<div class="cadastrar">
 	
-	<form action="" method="">
+	<form action="" method="POST">
 		<fieldset>
 		<legend>Consultar Dados</legend>
 		<table>
