@@ -34,7 +34,7 @@
                 <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Cliente
@@ -60,6 +60,9 @@
                             <td><label>Nome</label></td>
 
                             <td>
+                                <form action="">
+
+                                </form>
                                 <?php
                                     // importa dados de conexão
                                     include_once('../conexao.php');

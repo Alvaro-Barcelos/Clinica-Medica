@@ -37,7 +37,7 @@
                     <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    

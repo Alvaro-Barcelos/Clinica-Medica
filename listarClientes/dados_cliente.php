@@ -34,7 +34,7 @@
                     <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    
@@ -82,10 +82,19 @@
                         echo "<label> telefone </label>";
                         echo "<input name='telefone' type='tel' class='form-control' id='sexo' maxlength='16' autocomplete='off' value='" . htmlspecialchars($linha['telefone']) . "'>";
                     }
-                    echo "<input type='submit' value='Enviar' class='consultar'>";
+                                       
 				?>
+            
+                <select name="escolha">
+                    <option value="1">Editar</option>
+                    <option value="2">Apagar</option>
+                </select>
+                
+                <input type="submit" value="Enviar" class="consultar">
 				</td>
+                
 			</tr>
+            <tr></tr>
 		</table>
 		</fieldset>
 		</form>

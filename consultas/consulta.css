@@ -113,7 +113,8 @@ section div {
 
 .cadastrar table td{
     padding: 10px;
-    background-color: rgb(250, 252, 250);
+    background-color: rgb(253, 253, 253);
+    color: black;
 }
 
 /* ---------------------- estilo php ------------------------------ */

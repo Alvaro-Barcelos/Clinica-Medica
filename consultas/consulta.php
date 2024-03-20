@@ -34,7 +34,7 @@
                     <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    
@@ -50,9 +50,9 @@
                 if(isset($_POST['date'])) {
                     $data = $_POST['date'];
 
-                    $consulta = mysqli_query($conexao, "SELECT consulta.CPF, consulta.Data_consulta, consulta.Horario, consulta.Tipo_consulta, cliente.Nome_cliente 
+                    $consulta = mysqli_query($conexao, "SELECT consulta.CPF, consulta.Data_consulta, consulta.Horario, medico.Nome_cliente as medico, medico.especialidade ,cliente.Nome_cliente 
                     FROM Consulta INNER JOIN cliente 
-                    ON consulta.CPF = cliente.CPF
+                    ON consulta.CPF = cliente.CPF INNER JOIN Medico ON consulta.Cpf_medico = medico.Cpf_medico
                     WHERE Data_consulta = '$data'");
 
                     if(mysqli_num_rows($consulta) > 0) {
@@ -61,6 +61,7 @@
                                     echo "<tr>";
                                         echo "<th>Data da consulta" . " </th>";
                                         echo "<th>Horário " .   " </th>";
+                                        echo "<th>Medico "  .   " </th>";
                                         echo "<th>Tipo "  .   " </th>";
                                         echo "<th>Nome do cliente "  .   " </th>";
                                     echo "</tr>";
@@ -68,7 +69,8 @@
                                     echo "<tr>";
                                         echo "<td> " . $linha['Data_consulta'] . "</td>";
                                         echo "<td> " . $linha['Horario'] . "</td>";
-                                        echo "<td> " . $linha['Tipo_consulta'] . "</td>";
+                                        echo "<td> " . $linha['medico'] . "</td>";
+                                        echo "<td> " . $linha['especialidade'] . "</td>";
                                         echo "<td> " . $linha['Nome_cliente'] . "</td>";
                                     echo "</tr>";
                                 
@@ -78,7 +80,7 @@
                     } else {
                         echo "<div class='aviso'>";
                         echo "<p>Nenhum resultado encontrado para a data especificada.</p>"; 
-                        echo "</div>""
+                        echo "</div>";
 
                     }
                 }

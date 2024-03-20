@@ -34,7 +34,7 @@
                     <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><a href="../cadastrar/cadastrar.html">Cadastrar</a></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
                     </ul>                    
@@ -54,36 +54,48 @@
                     // importa dados de conexão
                     include_once('../conexao.php');
 
-                    // Verifica se os dados foram enviados via POST
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        // Escapar os valores dos campos
-                        $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
-                        $cliente = mysqli_real_escape_string($conexao, $_POST['cliente']);
-                        $nascimento = mysqli_real_escape_string($conexao, $_POST['data_nascimento']);
-                        $sexo = mysqli_real_escape_string($conexao, $_POST['sexo']);
-                        $email = mysqli_real_escape_string($conexao, $_POST['email']);
-                        $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
+                    $opcao = $_POST['escolha'];
 
-                        // Verifica se os valores não estão vazios
-                        if (!empty($cpf) && !empty($cliente) && !empty($nascimento) && !empty($sexo) && !empty($email) && !empty($telefone)) {
-                            // Atualiza os dados no banco de dados
-                            $consulta = mysqli_query($conexao, "UPDATE cliente 
-                                SET Nome_cliente = '$cliente',
-                                    Nascimento = '$nascimento',
-                                    Sexo = '$sexo',
-                                    Email = '$email',
-                                    Telefone = '$telefone'
-                                WHERE CPF = '$cpf'");
-                            
-                            if ($consulta) {
-                                echo "Atualização feita com sucesso!!!";
+                    if($opcao == 1){
+                        // Verifica se os dados foram enviados via POST
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            // Escapar os valores dos campos
+                            $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+                            $cliente = mysqli_real_escape_string($conexao, $_POST['cliente']);
+                            $nascimento = mysqli_real_escape_string($conexao, $_POST['data_nascimento']);
+                            $sexo = mysqli_real_escape_string($conexao, $_POST['sexo']);
+                            $email = mysqli_real_escape_string($conexao, $_POST['email']);
+                            $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
+    
+                            // Verifica se os valores não estão vazios
+                            if (!empty($cpf) && !empty($cliente) && !empty($nascimento) && !empty($sexo) && !empty($email) && !empty($telefone)) {
+                                // Atualiza os dados no banco de dados
+                                $consulta = mysqli_query($conexao, "UPDATE cliente 
+                                    SET Nome_cliente = '$cliente',
+                                        Nascimento = '$nascimento',
+                                        Sexo = '$sexo',
+                                        Email = '$email',
+                                        Telefone = '$telefone'
+                                    WHERE CPF = '$cpf'");
+                                
+                                if ($consulta) {
+                                    echo "Atualização feita com sucesso!!!";
+                                } else {
+                                    echo "Erro ao atualizar os dados: " . mysqli_error($conexao);
+                                }
                             } else {
-                                echo "Erro ao atualizar os dados: " . mysqli_error($conexao);
+                                echo "Todos os campos são obrigatórios.";
                             }
-                        } else {
-                            echo "Todos os campos são obrigatórios.";
                         }
                     }
+
+                    else{
+                        $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+
+                        $exclui = mysqli_query($conexao, "DELETE FROM cliente WHERE CPF = '$cpf' ");
+                        echo "Cliente excluído com sucesso do Sistema!";
+                    }
+                    
                     ?>
 				</td>
 			</tr>

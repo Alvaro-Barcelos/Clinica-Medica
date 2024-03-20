@@ -51,7 +51,7 @@
 
         $data = $_POST['dateConsulta'];
         $horario = $_POST['horaConsulta'];
-        $tipo = $_POST['tipoConsulta'];
+        $tipo = $_POST['medicoEspecialidade'];
         $cpf = $_POST['cpf'];
 
 

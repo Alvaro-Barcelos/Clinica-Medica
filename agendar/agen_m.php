@@ -30,7 +30,7 @@
                     <ul>
                         <li><a href="../home/home.html">Home</a></li>
                         <li><a href="../home/home.html">Sobre nos</a></li>
-                        <li><a href="../agendar/agendar.html">Agendar</a></li>
+                        <li><a href="../agendar/agen_m.php">Agendar</a></li>
                         <li><div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Cliente
@@ -38,7 +38,6 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" href="../cadastrar/cadastrar.html">Cadastrar Cliente</a>
                               <a class="dropdown-item" href="../listarClientes/consultar_cliente.php">Alterar Dados</a>
-                              <a class="dropdown-item" href="../listarClientes/deletar_cliente.php">Deletar Cliente</a>
                             </div>
                           </div></li>
                         <li><a href="../consultas/consulta.html">Consultas</a></li>
@@ -50,6 +49,8 @@
     <div class="agendar">
         <h2>Agendar Consulta</h2>
         <form class="questions" action="agendar.php" method="post" >
+
+            
             <div class="mb-3">
               <input type="date" class="form-control" id="dateConsulta" aria-describedby="emailHelp" placeholder="Data da Consulta" name="dateConsulta">
             </div>
@@ -57,10 +58,22 @@
             <div class="mb-3">
                 <input type="time" class="form-control" id="horaConsulta" aria-describedby="emailHelp" placeholder="Horário da Consulta" name="horaConsulta">
             </div>
-    
-            <div class="mb-3">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tipo da Consulta" name="tipoConsulta">
-            </div>
+
+            <?php
+              include_once('../conexao.php');
+
+              echo '<div class="mb-3">';
+              echo '<select class="form-select" aria-label="Default select example" name="medicoEspecialidade">';
+
+              $consulta = mysqli_query($conexao, "SELECT Nome_cliente, especialidade FROM Medico");
+
+              while ($linha = mysqli_fetch_array($consulta)) {
+                  echo '<option value="' . $linha['especialidade'] . '">' . $linha['Nome_cliente'] . ' - ' . $linha['especialidade'] . '</option>';
+              }
+
+              echo '</select>';
+              echo '</div>';
+            ?>
 
             <div class="mb-3">
                 <input name="cpf" type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
