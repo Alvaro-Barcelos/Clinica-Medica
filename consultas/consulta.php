@@ -46,6 +46,14 @@
             <table>
 
         
+
+            <tr>
+                <th>Data da consulta</th>
+                <th>Horário</th>
+                <th>Medico</th>
+                <th>Tipo</th>
+                <th>Nome do cliente</th>
+            </tr>
             <?php
                 include_once('../conexao.php');
 
