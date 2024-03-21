@@ -59,25 +59,25 @@
                 <input type="time" class="form-control" id="horaConsulta" aria-describedby="emailHelp" placeholder="Horário da Consulta" name="horaConsulta">
             </div>
 
+            <select class="form-select" aria-label="Default select example" name="medicoCpf">
             <?php
               include_once('../conexao.php');
 
-              echo '<div class="mb-3">';
-              echo '<select class="form-select" aria-label="Default select example" name="medicoEspecialidade">';
+              $consultaMedicos = mysqli_query($conexao, "SELECT Cpf_Medico, Nome_medico, Especialidade FROM Medico");
 
-              $consulta = mysqli_query($conexao, "SELECT Nome_cliente, especialidade FROM Medico");
-
-              while ($linha = mysqli_fetch_array($consulta)) {
-                  echo '<option value="' . $linha['especialidade'] . '">' . $linha['Nome_cliente'] . ' - ' . $linha['especialidade'] . '</option>';
+              if (mysqli_num_rows($consultaMedicos) > 0) {
+                  while ($linhaMedico = mysqli_fetch_array($consultaMedicos)) {
+                      echo '<option value="' . $linhaMedico['Cpf_Medico'] . '">' . $linhaMedico['Nome_medico'] . ' - ' . $linhaMedico['Especialidade'] . '</option>';
+                  }
+              } else {
+                  echo '<option value="">Nenhum médico disponível</option>';
               }
-
-              echo '</select>';
-              echo '</div>';
-            ?>
+              ?>
+            </select>
 
             <div class="mb-3">
                 <input name="cpf" type="text" class="form-control" placeholder="CPF"  id="cpf" maxlength="14" autocomplete="off">
-              </div>
+            </div>
 
             <button type="submit" id="botao" class="btn btn-primary">Cadastrar</button>
         </form>

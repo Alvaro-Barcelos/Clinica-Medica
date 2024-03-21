@@ -61,20 +61,17 @@ section div {
     background-color: #07668C;
 }
 
-.cadastrar{
-    background-color:  #04BF55;
-    margin:0 auto;
+.cadastrar {
+    background-color: #04BF55;
+    margin: 0 auto;
     padding-top: 20px;
+    padding-bottom: 30px;
     width: 500px;
-    height: 300px; 
     margin-top: 100px;
     border-radius: 5%;
     box-shadow: 5px 5px 5px rgb(185, 185, 185);
     text-align: center;
-    color: white;
 }
-
-
 
 .cadastrar h2 {
     margin-left: 15px;

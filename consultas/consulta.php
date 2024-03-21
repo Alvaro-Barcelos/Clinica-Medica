@@ -44,27 +44,34 @@
 
         <div class='cadastrar'>
             <table>
+
+        
             <?php
                 include_once('../conexao.php');
 
                 if(isset($_POST['date'])) {
                     $data = $_POST['date'];
 
-                    $consulta = mysqli_query($conexao, "SELECT consulta.CPF, consulta.Data_consulta, consulta.Horario, medico.Nome_cliente as medico, medico.especialidade ,cliente.Nome_cliente 
-                    FROM Consulta INNER JOIN cliente 
-                    ON consulta.CPF = cliente.CPF INNER JOIN Medico ON consulta.Cpf_medico = medico.Cpf_medico
+                    $consulta = mysqli_query($conexao, "SELECT consulta.Data_consulta, consulta.Horario, medico.Nome_medico as medico, medico.especialidade ,cliente.Nome_cliente 
+                    FROM Consulta 
+                    INNER JOIN cliente 
+                    ON consulta.CPF_cliente = cliente.CPF 
+                    INNER JOIN Medico 
+                    ON consulta.Cpf_Medico = medico.Cpf_Medico
                     WHERE Data_consulta = '$data'");
+
+                    echo "<tr>";
+                    echo "<th>Data da consulta</th>";
+                    echo "<th>Horário</th>";
+                    echo "<th>Medico</th>";
+                    echo "<th>Tipo</th>";
+                    echo "<th>Nome do cliente</th>";
+                    echo "</tr>";
 
                     if(mysqli_num_rows($consulta) > 0) {
                         while ($linha = mysqli_fetch_array($consulta)) {
        
-                                    echo "<tr>";
-                                        echo "<th>Data da consulta" . " </th>";
-                                        echo "<th>Horário " .   " </th>";
-                                        echo "<th>Medico "  .   " </th>";
-                                        echo "<th>Tipo "  .   " </th>";
-                                        echo "<th>Nome do cliente "  .   " </th>";
-                                    echo "</tr>";
+                                    
 
                                     echo "<tr>";
                                         echo "<td> " . $linha['Data_consulta'] . "</td>";

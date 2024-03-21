@@ -45,23 +45,27 @@
                  
             </div>
         </section>
-    <?php
-    
-        include_once('../conexao.php');
+        <?php
+            include_once('../conexao.php');
 
-        $data = $_POST['dateConsulta'];
-        $horario = $_POST['horaConsulta'];
-        $tipo = $_POST['medicoEspecialidade'];
-        $cpf = $_POST['cpf'];
+            $data = $_POST['dateConsulta'];
+            $horario = $_POST['horaConsulta'];
+            $cpfCliente = $_POST['cpf'];
+            $cpfMedico = $_POST['medicoCpf'];
 
+            // Consulta ao banco de dados para obter a especialidade do médico
+            $consultaEspecialidade = mysqli_query($conexao, "SELECT Especialidade FROM Medico WHERE Cpf_Medico = '$cpfMedico'");
+            $linhaEspecialidade = mysqli_fetch_array($consultaEspecialidade);
+            $especialidadeMedico = $linhaEspecialidade['Especialidade'];
 
-        $insere = mysqli_query($conexao, "INSERT INTO consulta (Data_consulta, Horario, Tipo_consulta, cpf) VALUES ('$data', '$horario', '$tipo', '$cpf')") or die (mysqli_error());
+            // Inserir os dados da consulta no banco de dados, incluindo o tipo de consulta médica associado à especialidade do médico
+            $insere = mysqli_query($conexao, "INSERT INTO Consulta (Data_consulta, Horario, Tipo_consulta, CPF_cliente, Cpf_Medico) VALUES ('$data', '$horario', '$especialidadeMedico', '$cpfCliente', '$cpfMedico' )") or die (mysqli_error($conexao));
 
+            echo "<div class='aviso'>";
+            echo "<p>Consulta agendada com sucesso!</p>"; 
+            echo "</div>";
+        ?>
 
-		echo "<div class='aviso'>";
-		echo "<p>Cliente inserido com sucesso!</p>"; 
-        echo "</div>"
-    ?>
 
 </body>
 </html>
